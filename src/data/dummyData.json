@@ -1,0 +1,72 @@
+[
+  {
+    "id": "A00012345",
+    "firstName": "Alice",
+    "lastName": "Smith",
+    "email": "alice.smith@school.edu",
+    "dob": "2001-04-15",
+    "major": "Computer Science",
+    "classLevel": "Senior",
+    "gpa": 3.85,
+    "phone": "555-123-4567",
+    "address": "123 Maple St, Springfield, IL",
+    "classSchedule": [
+      {
+        "courseId": "CS101",
+        "courseName": "Intro to Programming",
+        "days": "Mon/Wed",
+        "time": "10:00AM - 11:30AM",
+        "location": "Building A, Room 101"
+      },
+      {
+        "courseId": "CS305",
+        "courseName": "Data Structures",
+        "days": "Tue/Thu",
+        "time": "2:00PM - 3:30PM",
+        "location": "Building B, Room 202"
+      }
+    ]
+  },
+  {
+    "id": "B00067890",
+    "firstName": "Bob",
+    "lastName": "Johnson",
+    "email": "bob.johnson@school.edu",
+    "dob": "2000-08-21",
+    "major": "Business Administration",
+    "classLevel": "Junior",
+    "gpa": 3.55,
+    "phone": "555-234-5678",
+    "address": "456 Oak Ave, Greenville, NY",
+    "classSchedule": [
+      {
+        "courseId": "BUS201",
+        "courseName": "Marketing Principles",
+        "days": "Mon/Wed",
+        "time": "1:00PM - 2:30PM",
+        "location": "Building C, Room 103"
+      }
+    ]
+  },
+  {
+    "id": "C00013579",
+    "firstName": "Charlie",
+    "lastName": "Williams",
+    "email": "charlie.williams@school.edu",
+    "dob": "2002-02-05",
+    "major": "Mechanical Engineering",
+    "classLevel": "Sophomore",
+    "gpa": 3.45,
+    "phone": "555-345-6789",
+    "address": "789 Pine Rd, Fairview, TX",
+    "classSchedule": [
+      {
+        "courseId": "ME210",
+        "courseName": "Thermodynamics",
+        "days": "Tue/Thu",
+        "time": "9:00AM - 10:30AM",
+        "location": "Building D, Room 305"
+      }
+    ]
+  }
+]
