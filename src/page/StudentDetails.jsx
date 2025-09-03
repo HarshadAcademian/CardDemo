@@ -2,7 +2,20 @@ import React from 'react';
 import { Typography, Box, Divider } from '@ellucian/react-design-system/core';
 import { useParams } from 'react-router-dom';
 import dummyData from '../data/dummyData.json'; // import your dummy data
+import PropTypes from 'prop-types';
+import { withStyles } from "@ellucian/react-design-system/core/styles";
 
+const styles = () => ({
+    root:{
+        color:"black"
+    },
+  sectionHeading: {
+    borderBottom: "2px solid #000",
+    paddingBottom: "4px",
+    display: "inline-block",
+    marginBottom: "12px"
+  },
+});
 const StudentDetails = (props) => {
     const {classes} = props;
     const { id } = useParams(); // get id from URL
@@ -18,6 +31,7 @@ const StudentDetails = (props) => {
 
     return (
         <Box
+         className={classes.root}
             style={{
                 maxWidth: '500px',
                 margin: '20px auto',

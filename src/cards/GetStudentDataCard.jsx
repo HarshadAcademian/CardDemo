@@ -9,10 +9,21 @@ import {
     Typography,
     Box
 } from '@ellucian/react-design-system/core';
+import PropTypes from "prop-types";
+import { withStyles } from "@ellucian/react-design-system/core/styles";
 import { useCardControl } from '@ellucian/experience-extension-utils';
 import dummyData from '../data/dummyData.json';
+import { spacing40 } from "@ellucian/react-design-system/core/styles/tokens";
 
-export default function SearchStudent() {
+
+const styles = () => ({
+  card: {
+    marginRight: spacing40,
+    marginLeft: spacing40,
+  },
+});
+
+ function GetStudentDataCard() {
     const [searchType, setSearchType] = useState('id');
     const [query, setQuery] = useState('');
     const [results, setResults] = useState([]);
@@ -122,3 +133,9 @@ export default function SearchStudent() {
         </Box>
     );
 }
+GetStudentDataCard.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
+
+
+export default withStyles(styles)(GetStudentDataCard);
