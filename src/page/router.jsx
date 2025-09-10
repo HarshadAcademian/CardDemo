@@ -6,6 +6,7 @@ import {
     Switch
 } from 'react-router-dom';
 import StudentDetails from './StudentDetails';
+import ClassSchedule from './ClassSchedule';
  
 const RouterPage = (props) => {
     return (
@@ -14,6 +15,10 @@ const RouterPage = (props) => {
                 <Route exact path={`/:id`}>
                 <StudentDetails {...props} />
             </Route>
+
+            <Route path="/student/:id/schedule">
+                    <ClassSchedule {...props} />
+                </Route>
             </Switch>
         </Router>
     );
