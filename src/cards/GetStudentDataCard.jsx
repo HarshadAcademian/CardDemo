@@ -53,7 +53,7 @@ const styles = () => ({
     const handleClick = (student) => {
         console.log("clicked");
         navigateToPage({
-            route: `/${student.id}`,
+            route: `/${student.studentId}`,
             state: { student }
         });
     };
@@ -119,7 +119,7 @@ const styles = () => ({
                                 onMouseOver={(e) => (e.currentTarget.style.background = '#f7f7f7')}
                                 onMouseOut={(e) => (e.currentTarget.style.background = 'white')}
                             >
-                                <Typography><strong>ID:</strong> {student.id}</Typography>
+                                <Typography><strong>ID:</strong> {student?.studentId}</Typography>
                                 <Typography><strong>Name:</strong> {student.firstName} {student.lastName}</Typography>
                             </Box>
                         ))}

@@ -1,24 +1,17 @@
 [
   {
     "studentId": "A0000XXXXX",
-    "id": "A00012345",
     "firstName": "ABC",
     "lastName": "Smith",
     "email": "abcSmith@gmail.com",
-    "dob": "2001-04-15",
-    "major": "Computer Science",
-    "classLevel": "Senior",
-    "gpa": 3.85,
-    "phone": "555-123-4567",
-    "address": "123 Maple St, Springfield, IL",
     "contactInformation": {
-      "preferredEmail": "abcSmith@gmail.com",
-      "primaryPhone": "123-456-7890",
       "campusEmail": "abc.smith@university.edu",
       "cellularPhone": "987-654-3210",
       "campusMail": "Box 101",
       "emergencyContactName": "John Smith",
+      "preferredEmail": "abcSmith@gmail.com",
       "emergencyContactRelationship": "Father",
+      "primaryPhone": "123-456-7890",
       "emergencyContactPhoneNumber": "123-111-2222"
     },
     "housingInformation": {
@@ -70,16 +63,9 @@
   },
   {
     "studentId": "B0000YYYYY",
-    "id": "B00067890",
     "firstName": "B",
     "lastName": "Smith",
     "email": "xyzSmith@gmail.com",
-    "dob": "2000-08-21",
-    "major": "Mechanical Engineering",
-    "classLevel": "Junior",
-    "gpa": 3.55,
-    "phone": "555-234-5678",
-    "address": "456 Oak Ave, Greenville, NY",
     "contactInformation": {
       "preferredEmail": "xyzSmith@gmail.com",
       "primaryPhone": "222-333-4444",
@@ -138,16 +124,9 @@
   },
   {
     "studentId": "C0000ZZZZZ",
-    "id": "C00013579",
     "firstName": "Charlie",
     "lastName": "Brown",
     "email": "charlie.brown@gmail.com",
-    "dob": "2002-02-05",
-    "major": "Psychology",
-    "classLevel": "Sophomore",
-    "gpa": 3.45,
-    "phone": "555-345-6789",
-    "address": "789 Pine Rd, Fairview, TX",
     "contactInformation": {
       "preferredEmail": "charlie.brown@gmail.com",
       "primaryPhone": "333-444-5555",
