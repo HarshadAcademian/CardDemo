@@ -1,77 +1,218 @@
 import React from 'react';
-import { Typography, Box, Divider, Button } from '@ellucian/react-design-system/core';
 import { useParams, useHistory } from 'react-router-dom';
-import dummyData from '../data/dummyData.json'; 
+import { Typography, Box, Divider, Button, Grid } from '@ellucian/react-design-system/core';
+import { ChevronLeft } from '@ellucian/ds-icons/lib';
 import PropTypes from 'prop-types';
-import { withStyles } from "@ellucian/react-design-system/core/styles";
+import { withStyles } from '@ellucian/react-design-system/core/styles';
+import dummyData from '../data/dummyData.json';
 
 const styles = () => ({
     root: {
-        color: "black",
-        maxWidth: '600px',
-        margin: '30px auto',
+        maxWidth: '95%',
+        margin: '20px auto',
         padding: '20px',
         border: '1px solid #ddd',
         borderRadius: '12px',
         background: '#fff',
-        boxShadow: '0 2px 6px rgba(0,0,0,0.08)',
+        boxShadow: '0 2px 6px rgba(0,0,0,0.08)'
     },
-    sectionHeading: {
-        borderBottom: "2px solid #000",
-        paddingBottom: "4px",
-        display: "inline-block",
-        marginBottom: "12px"
+    headerRow: {
+        display: 'flex',
+        alignItems: 'center',
+        marginBottom: '16px'
     },
-    infoRow: {
+    backButton: {
+        marginRight: '12px',
+        padding: '4px 12px',
+        minWidth: 'auto'
+    },
+    section: {
+        marginTop: '20px',
         marginBottom: '10px'
     },
-    button: {
-        marginTop: '16px'
+    label: {
+        fontWeight: 'bold',
+        marginRight: '6px'
+    },
+    value: {
+        color: '#444'
+    },
+    infoRow: {
+        marginBottom: '8px'
+    },
+    scheduleButton: {
+        marginTop: '20px'
     }
 });
 
 const StudentDetails = (props) => {
     const { classes } = props;
-    const { id } = useParams(); // get id from URL
+    const { id } = useParams();
     const history = useHistory();
 
-    const student = dummyData.find((s) => s.id === id);
+    const student = dummyData.find((s) => s.id === id || s.studentId === id);
 
     if (!student) {
         return (
-            <Box style={{ padding: '20px', textAlign: 'center' }}>
+            <Box className={classes.root}>
                 <Typography variant="h3">No student data found.</Typography>
             </Box>
         );
     }
 
-    const goToSchedule = () => {
-    history.push(`/student/${student.id}/schedule`);
-};
+    const goBack = () => {
+        history.goBack();
+    };
 
+    const goToSchedule = () => {
+        history.push(`/student/${student.id}/schedule`);
+    };
 
     return (
         <Box className={classes.root}>
-            <Typography variant="h2" style={{ marginBottom: '12px' }}>
-                {student.firstName} {student.lastName}
+            {/* Header */}
+            <Box className={classes.headerRow}>
+                <Button
+                    className={classes.backButton}
+                    color="primary"
+                    size="default"
+                    variant="contained"
+                    onClick={goBack}
+                    startIcon={<ChevronLeft />}
+                >
+                    Back
+                </Button>
+                <Typography variant="h2">
+                    {student.firstName} {student.lastName}
+                </Typography>
+            </Box>
+            <Typography variant="body1" style={{ marginBottom: '10px' }}>
+                {student.studentId}
             </Typography>
-            <Divider style={{ marginBottom: '16px' }} />
+            <Divider />
 
-            <Box className={classes.infoRow}><Typography variant="body1"><strong>ID:</strong> {student.id}</Typography></Box>
-            <Box className={classes.infoRow}><Typography variant="body1"><strong>Email:</strong> {student.email}</Typography></Box>
-            <Box className={classes.infoRow}><Typography variant="body1"><strong>Date of Birth:</strong> {student.dob}</Typography></Box>
-            <Box className={classes.infoRow}><Typography variant="body1"><strong>Major:</strong> {student.major}</Typography></Box>
-            <Box className={classes.infoRow}><Typography variant="body1"><strong>Class Level:</strong> {student.classLevel}</Typography></Box>
-            <Box className={classes.infoRow}><Typography variant="body1"><strong>GPA:</strong> {student.gpa}</Typography></Box>
-            <Box className={classes.infoRow}><Typography variant="body1"><strong>Phone:</strong> {student.phone}</Typography></Box>
-            <Box className={classes.infoRow}><Typography variant="body1"><strong>Address:</strong> {student.address}</Typography></Box>
+            {/* Contact Information */}
+            <Box className={classes.section}>
+                <Typography variant="h3">Contact Information</Typography>
+                <Grid container spacing={2}>
+                    <Grid item xs={12} md={6}>
+                        <div className={classes.infoRow}>
+                            <span className={classes.label}>Preferred Email:</span>
+                            <span className={classes.value}>{student.contactInformation?.preferredEmail || '-'}</span>
+                        </div>
+                        <div className={classes.infoRow}>
+                            <span className={classes.label}>Primary Phone:</span>
+                            <span className={classes.value}>{student.contactInformation?.primaryPhone || '-'}</span>
+                        </div>
+                        <div className={classes.infoRow}>
+                            <span className={classes.label}>Campus Email:</span>
+                            <span className={classes.value}>{student.contactInformation?.campusEmail || '-'}</span>
+                        </div>
+                        <div className={classes.infoRow}>
+                            <span className={classes.label}>Cellular Phone:</span>
+                            <span className={classes.value}>{student.contactInformation?.cellularPhone || '-'}</span>
+                        </div>
+                    </Grid>
+                    <Grid item xs={12} md={6}>
+                        <div className={classes.infoRow}>
+                            <span className={classes.label}>Campus Mail:</span>
+                            <span className={classes.value}>{student.contactInformation?.campusMail || '-'}</span>
+                        </div>
+                        <div className={classes.infoRow}>
+                            <span className={classes.label}>Emergency Contact:</span>
+                            <span className={classes.value}>{student.contactInformation?.emergencyContactName || '-'}</span>
+                        </div>
+                        <div className={classes.infoRow}>
+                            <span className={classes.label}>Relationship:</span>
+                            <span className={classes.value}>{student.contactInformation?.emergencyContactRelationship || '-'}</span>
+                        </div>
+                        <div className={classes.infoRow}>
+                            <span className={classes.label}>Phone:</span>
+                            <span className={classes.value}>{student.contactInformation?.emergencyContactPhoneNumber || '-'}</span>
+                        </div>
+                    </Grid>
+                </Grid>
+            </Box>
+            <Divider />
 
-            <Button className={classes.button} variant="contained" onClick={goToSchedule}>
-                See Class Schedule
-            </Button>
+            {/* Housing Information */}
+            <Box className={classes.section}>
+                <Typography variant="h3">Housing Information</Typography>
+                <Grid container spacing={2}>
+                    <Grid item xs={12} md={6}>
+                        <div className={classes.infoRow}>
+                            <span className={classes.label}>Residence Term:</span>
+                            <span className={classes.value}>{student.housingInformation?.residenceTerm || '-'}</span>
+                        </div>
+                        <div className={classes.infoRow}>
+                            <span className={classes.label}>Building:</span>
+                            <span className={classes.value}>{student.housingInformation?.building || '-'}</span>
+                        </div>
+                    </Grid>
+                    <Grid item xs={12} md={6}>
+                        <div className={classes.infoRow}>
+                            <span className={classes.label}>Room No:</span>
+                            <span className={classes.value}>{student.housingInformation?.roomNo || '-'}</span>
+                        </div>
+                        <div className={classes.infoRow}>
+                            <span className={classes.label}>Phone:</span>
+                            <span className={classes.value}>{student.housingInformation?.phone || '-'}</span>
+                        </div>
+                    </Grid>
+                </Grid>
+            </Box>
+            <Divider />
+
+            {/* Grade Information */}
+            <Box className={classes.section}>
+                <Typography variant="h3">Grade Information</Typography>
+                <Grid container spacing={2}>
+                    <Grid item xs={12} md={6}>
+                        <div className={classes.infoRow}>
+                            <span className={classes.label}>Lifestyle:</span>
+                            <span className={classes.value}>{student.gradeInformation?.lifestyle || '-'}</span>
+                        </div>
+                        <div className={classes.infoRow}>
+                            <span className={classes.label}>Grad Date:</span>
+                            <span className={classes.value}>{student.gradeInformation?.gradDate || '-'}</span>
+                        </div>
+                        <div className={classes.infoRow}>
+                            <span className={classes.label}>Major:</span>
+                            <span className={classes.value}>{student.gradeInformation?.major || '-'}</span>
+                        </div>
+                    </Grid>
+                    <Grid item xs={12} md={6}>
+                        <div className={classes.infoRow}>
+                            <span className={classes.label}>Arrival Date:</span>
+                            <span className={classes.value}>{student.gradeInformation?.arrivalDate || '-'}</span>
+                        </div>
+                        <div className={classes.infoRow}>
+                            <span className={classes.label}>ENRL:</span>
+                            <span className={classes.value}>{student.gradeInformation?.enrl || '-'}</span>
+                        </div>
+                        <div className={classes.infoRow}>
+                            <span className={classes.label}>Academic Advisor:</span>
+                            <span className={classes.value}>{student.gradeInformation?.academicAdvisor || '-'}</span>
+                        </div>
+                    </Grid>
+                </Grid>
+            </Box>
+            <Divider />
+
+            {/* See Class Schedule Button */}
+            <Box className={classes.section} style={{ textAlign: 'center' }}>
+                <Button
+                    className={classes.scheduleButton}
+                    variant="contained"
+                    color="primary"
+                    onClick={goToSchedule}
+                >
+                    See Class Schedule
+                </Button>
+            </Box>
         </Box>
     );
-}
+};
 
 StudentDetails.propTypes = {
     classes: PropTypes.object.isRequired

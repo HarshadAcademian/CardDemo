@@ -1,72 +1,207 @@
 [
   {
+    "studentId": "A0000XXXXX",
     "id": "A00012345",
-    "firstName": "Alice",
+    "firstName": "ABC",
     "lastName": "Smith",
-    "email": "alice.smith@school.edu",
+    "email": "abcSmith@gmail.com",
     "dob": "2001-04-15",
     "major": "Computer Science",
     "classLevel": "Senior",
     "gpa": 3.85,
     "phone": "555-123-4567",
     "address": "123 Maple St, Springfield, IL",
+    "contactInformation": {
+      "preferredEmail": "abcSmith@gmail.com",
+      "primaryPhone": "123-456-7890",
+      "campusEmail": "abc.smith@university.edu",
+      "cellularPhone": "987-654-3210",
+      "campusMail": "Box 101",
+      "emergencyContactName": "John Smith",
+      "emergencyContactRelationship": "Father",
+      "emergencyContactPhoneNumber": "123-111-2222"
+    },
+    "housingInformation": {
+      "residenceTerm": "Fall 2025",
+      "building": "Hall A",
+      "roomNo": "201",
+      "phone": "555-1212"
+    },
+    "gradeInformation": {
+      "lifestyle": "Full-time",
+      "gradDate": "2027-05-15",
+      "major": "Computer Science",
+      "arrivalDate": "2023-08-20",
+      "enrl": "Active",
+      "academicAdvisor": "Dr. Emily Johnson"
+    },
     "classSchedule": [
       {
-        "courseId": "CS101",
-        "courseName": "Intro to Programming",
-        "days": "Mon/Wed",
-        "time": "10:00AM - 11:30AM",
-        "location": "Building A, Room 101"
+        "POT": "1",
+        "CRN": "12345",
+        "subject": "CS",
+        "course": "101",
+        "title": "Intro to Programming",
+        "credits": 3,
+        "primaryInstructor": "Prof. Alan Turing",
+        "days": "MWF",
+        "time": "10:00 - 10:50 AM",
+        "building": "Tech Hall",
+        "room": "305"
       },
       {
-        "courseId": "CS305",
-        "courseName": "Data Structures",
-        "days": "Tue/Thu",
-        "time": "2:00PM - 3:30PM",
-        "location": "Building B, Room 202"
+        "POT": "1",
+        "CRN": "67890",
+        "subject": "MATH",
+        "course": "201",
+        "title": "Calculus I",
+        "credits": 4,
+        "primaryInstructor": "Dr. Isaac Newton",
+        "days": "TTh",
+        "time": "11:00 - 12:15 PM",
+        "building": "Math Center",
+        "room": "202"
       }
+    ],
+    "ferpaReleaseDesignees": [
+      { "name": "Jane Smith", "passcode": "1234" },
+      { "name": "Mike Smith", "passcode": "5678" }
     ]
   },
   {
+    "studentId": "B0000YYYYY",
     "id": "B00067890",
-    "firstName": "Bob",
-    "lastName": "Johnson",
-    "email": "bob.johnson@school.edu",
+    "firstName": "B",
+    "lastName": "Smith",
+    "email": "xyzSmith@gmail.com",
     "dob": "2000-08-21",
-    "major": "Business Administration",
+    "major": "Mechanical Engineering",
     "classLevel": "Junior",
     "gpa": 3.55,
     "phone": "555-234-5678",
     "address": "456 Oak Ave, Greenville, NY",
+    "contactInformation": {
+      "preferredEmail": "xyzSmith@gmail.com",
+      "primaryPhone": "222-333-4444",
+      "campusEmail": "b.smith@university.edu",
+      "cellularPhone": "999-888-7777",
+      "campusMail": "Box 102",
+      "emergencyContactName": "Mary Smith",
+      "emergencyContactRelationship": "Mother",
+      "emergencyContactPhoneNumber": "222-111-3333"
+    },
+    "housingInformation": {
+      "residenceTerm": "Fall 2025",
+      "building": "Hall B",
+      "roomNo": "110",
+      "phone": "555-2323"
+    },
+    "gradeInformation": {
+      "lifestyle": "Full-time",
+      "gradDate": "2026-12-20",
+      "major": "Mechanical Engineering",
+      "arrivalDate": "2022-08-18",
+      "enrl": "Active",
+      "academicAdvisor": "Dr. Robert Brown"
+    },
     "classSchedule": [
       {
-        "courseId": "BUS201",
-        "courseName": "Marketing Principles",
-        "days": "Mon/Wed",
-        "time": "1:00PM - 2:30PM",
-        "location": "Building C, Room 103"
+        "POT": "1",
+        "CRN": "54321",
+        "subject": "ME",
+        "course": "210",
+        "title": "Thermodynamics",
+        "credits": 3,
+        "primaryInstructor": "Prof. Nikola Tesla",
+        "days": "MWF",
+        "time": "2:00 - 2:50 PM",
+        "building": "Engineering Hall",
+        "room": "402"
+      },
+      {
+        "POT": "1",
+        "CRN": "98765",
+        "subject": "PHYS",
+        "course": "150",
+        "title": "Physics I",
+        "credits": 4,
+        "primaryInstructor": "Dr. Albert Einstein",
+        "days": "TTh",
+        "time": "9:30 - 10:45 AM",
+        "building": "Science Center",
+        "room": "210"
       }
+    ],
+    "ferpaReleaseDesignees": [
+      { "name": "Sarah Smith", "passcode": "4321" }
     ]
   },
   {
+    "studentId": "C0000ZZZZZ",
     "id": "C00013579",
     "firstName": "Charlie",
-    "lastName": "Williams",
-    "email": "charlie.williams@school.edu",
+    "lastName": "Brown",
+    "email": "charlie.brown@gmail.com",
     "dob": "2002-02-05",
-    "major": "Mechanical Engineering",
+    "major": "Psychology",
     "classLevel": "Sophomore",
     "gpa": 3.45,
     "phone": "555-345-6789",
     "address": "789 Pine Rd, Fairview, TX",
+    "contactInformation": {
+      "preferredEmail": "charlie.brown@gmail.com",
+      "primaryPhone": "333-444-5555",
+      "campusEmail": "charlie.brown@university.edu",
+      "cellularPhone": "444-555-6666",
+      "campusMail": "Box 103",
+      "emergencyContactName": "Lucy Brown",
+      "emergencyContactRelationship": "Sister",
+      "emergencyContactPhoneNumber": "333-222-4444"
+    },
+    "housingInformation": {
+      "residenceTerm": "Spring 2026",
+      "building": "Hall C",
+      "roomNo": "220",
+      "phone": "555-3434"
+    },
+    "gradeInformation": {
+      "lifestyle": "Part-time",
+      "gradDate": "2028-05-20",
+      "major": "Psychology",
+      "arrivalDate": "2024-01-10",
+      "enrl": "Active",
+      "academicAdvisor": "Dr. Lisa Green"
+    },
     "classSchedule": [
       {
-        "courseId": "ME210",
-        "courseName": "Thermodynamics",
-        "days": "Tue/Thu",
-        "time": "9:00AM - 10:30AM",
-        "location": "Building D, Room 305"
+        "POT": "1",
+        "CRN": "13579",
+        "subject": "PSY",
+        "course": "101",
+        "title": "Intro to Psychology",
+        "credits": 3,
+        "primaryInstructor": "Prof. Sigmund Freud",
+        "days": "MW",
+        "time": "1:00 - 2:15 PM",
+        "building": "Humanities Hall",
+        "room": "110"
+      },
+      {
+        "POT": "1",
+        "CRN": "24680",
+        "subject": "SOC",
+        "course": "120",
+        "title": "Sociology Basics",
+        "credits": 3,
+        "primaryInstructor": "Dr. Karl Marx",
+        "days": "TTh",
+        "time": "3:00 - 4:15 PM",
+        "building": "Social Science",
+        "room": "205"
       }
+    ],
+    "ferpaReleaseDesignees": [
+      { "name": "Linus Brown", "passcode": "5678" }
     ]
   }
 ]
